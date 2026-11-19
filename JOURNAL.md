@@ -24,8 +24,66 @@ Ce fichier permet de reprendre le travail exactement là où il s'est arrêté.
 
 ---
 
-## Phase 2 — Produit ⏳ (à faire)
+## Phase 2 — Produit ✅ (19/11/2026)
 
-## Phase 3 — Pitch et page de vente ⏳ (à faire)
+**Livrable** : `produit/dist/probant.html`. C'est une application autonome en un seul fichier de 229 Ko, qui fonctionne hors ligne et dont les données restent dans le navigateur.
 
-## Phase 4 — Prospection et rapport ⏳ (à faire)
+**Fonctions**
+- Classification des risques : 22 facteurs sur les 5 axes, ajustements motivés, versions.
+- Procédures internes : 13 sections et 2 annexes.
+- Désignation Tracfin et marche à suivre ERMES.
+- Formation adaptée par fonction et par risque : 21 modules, 32 questions, attestation numérotée, registre avec fin de conservation à départ + 5 ans.
+- Fiches de vigilance : niveau standard, renforcé ou bloqué, manquants, clôture contrôlée, conservation à clôture + 5 ans.
+- Auto-contrôle sur 20 points, avec pré-remplissage.
+- 10 documents PDF et Word.
+- Licence ECDSA vérifiée hors ligne, mode démo avec filigrane.
+- Sauvegarde et restauration, journal de traçabilité, agence d'exemple fictive.
+
+**Tests** : 32 tests unitaires et 7 tests E2E dans Chromium, tous réussis. Ils couvrent le parcours complet jusqu'à 100 %, la licence (valide, falsifiée, expirée), les 14 documents en PDF, la sauvegarde et la restauration, le blocage sur gel des avoirs, l'injection de code, l'affichage mobile et les libellés de tous les champs.
+
+**Automatisation des ventes** :
+- `produit/outils/licence.mjs` : clés, émission et vérification. Testé de bout en bout dans une copie jetable, sans qu'aucune clé ne reste dans le dépôt.
+- `produit/outils/worker-licence/` : chaîne Stripe → licence → e-mail Brevo, testée avec des échanges simulés.
+
+**Exemples** : `produit/exemples/` contient 10 PDF et 5 captures, produits à partir d'une agence fictive.
+
+**Pour reprendre** :
+- Ouvrir `produit/dist/probant.html`.
+- Lancer `cd produit && npm install && npm test && npm run test:e2e`.
+- Mise en service des licences : `npm run licence:init` puis `npm run build`, à faire par le fondateur.
+
+## Phase 3 — Pitch et page de vente ✅ (19/11/2026)
+
+**Livrables**
+- `site/public/` : **seul dossier à publier**, 1,1 Mo, statique, sans cookie ni traceur. Il contient :
+  - la page de vente (`index.html`), où chaque chiffre est sourcé ;
+  - le diagnostic gratuit (`diagnostic.html`), en 12 questions, qui réutilise le moteur du produit ;
+  - l'application (`app/`) ;
+  - 4 PDF d'exemple ;
+  - **3 projets de textes légaux** (`legal/`), à faire relire ;
+  - les en-têtes de sécurité (`_headers`, avec CSP).
+- `site/DEPLOIEMENT.md` : mise en ligne pas à pas (Cloudflare Pages ou Netlify), Stripe, champs `REMPLACER_…`, tests avant lancement.
+- `site/construire.mjs` régénère le site depuis le produit. `site/verifier.mjs` contrôle les champs à remplacer, les liens et les textes alternatifs, et bloque la mise en ligne tant qu'il reste un champ ou une page légale à l'état de projet.
+- `pitch/Probant-pitch.pptx` (modifiable, avec notes de l'orateur) et `pitch/Probant-pitch.pdf` : 15 diapositives. Elles sont générées par `pitch/generer_pitch.py`, et le graphique respecte le guide de visualisation (palette validée par script).
+
+**Vérifié**
+- Le site a été testé dans Chromium, sur ordinateur et sur mobile (390 px), sous la CSP de production : pas de défilement horizontal, application et aperçus fonctionnels, diagnostic complet, page 404.
+- Ajout du rappel de renouvellement de licence dans l'app (J-30), couvert par un test E2E. La suite passe à 32 tests unitaires et 8 E2E, tous réussis.
+
+**Pour reprendre** :
+- Régénérer le site : `node site/construire.mjs`, puis `node site/verifier.mjs --brouillon`.
+- Régénérer le pitch : `python3 pitch/generer_pitch.py`, puis `soffice --headless --convert-to pdf --outdir pitch pitch/Probant-pitch.pptx`.
+
+## Phase 4 — Prospection et rapport ✅ (19/11/2026)
+
+**Livrables**
+- `prospection/prospects.csv` : **10 agences indépendantes réelles** sur 7 marchés exposés (Saint-Tropez, Cannes, Biarritz, Saint-Jean-de-Luz, Annecy, Thonon, Porto-Vecchio, Chamonix). Chacune est vérifiée dans le répertoire officiel (active, employeuse, **non opposée à la prospection**). 8 e-mails génériques publiés, 2 formulaires de contact, avec la source de chaque information.
+- `prospection/brouillons.md` : 10 messages personnalisés, chacun fondé sur un fait vérifié, et une relance unique. **Aucun n'est envoyé.**
+- `prospection/README.md` : méthode chiffrée (209 → 110 → 53 → 14 → 10), exclusions motivées (dont CBRE Axite, réseau), règles CNIL appliquées, procédure d'envoi.
+- `prospection/outils/candidats_api.py` : liste reproductible des candidats depuis l'API officielle, avec exclusion des entreprises opposées.
+- `RAPPORT.md` : décisions, vérifié, estimé ou non vérifié, checklist de validation avant lancement.
+- Prix concurrents **vérifiés directement** (Konforme, VigImmo, Conform-Immo, kyc.immo) et mis à jour dans `docs/03`.
+
+**Environnement** : seconde mise à jour réseau approuvée par l'utilisateur. Elle autorise les sites des agences et les pages tarifs concurrentes, et retire les domaines devenus inutiles.
+
+**État final** : toutes les phases sont terminées. Prochaines actions côté utilisateur : `RAPPORT.md` §5.

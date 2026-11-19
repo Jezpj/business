@@ -1,0 +1,19 @@
+{
+  "name": "probant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Probant — le dossier LCB-FT des agences immobilières, prêt pour le contrôle",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test \"tests/unit/*.test.mjs\"",
+    "test:e2e": "node build.mjs --cle-test && node --test --test-concurrency=1 \"tests/e2e/*.test.mjs\"",
+    "test:all": "npm test && npm run test:e2e",
+    "licence:init": "node outils/licence.mjs init",
+    "licence:emettre": "node outils/licence.mjs emettre",
+    "exemples": "node build.mjs --cle-test && node tests/generer-exemples.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
+}

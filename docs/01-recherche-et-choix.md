@@ -98,7 +98,7 @@ Depuis le décret, l'offre a explosé. C'est une **preuve de demande**, mais il 
 
 | Offre existante | Modèle | Limite pour une petite agence |
 |---|---|---|
-| Konforme, Legapass VigImmo, Conform-Immo, kyc.immo, Documan, Modelo (Septeo), AP Solutions IO | SaaS de KYC ou de criblage, abonnement mensuel (29 à 149 € HT/mois) ou paiement au dossier | Centré sur le dossier client. Abonnement récurrent. Pièces d'identité stockées dans le cloud de l'éditeur. |
+| Konforme, Legapass VigImmo, Conform-Immo, kyc.immo, Documan, Modelo (Septeo), AP Solutions IO | SaaS de KYC ou de criblage, abonnement mensuel (29 à 149 € HT/mois, prix vérifiés [L6]) ou paiement au dossier | Centré sur le dossier client. Abonnement récurrent. Pièces d'identité stockées dans le cloud de l'éditeur. |
 | Lefebvre Dalloz, Galian, maformationimmo, organismes ALUR | E-learning **générique** facturé par personne (49 à 168 € HT) | Pas adapté à la classification des risques de l'agence, ce que le décret exige désormais. |
 | Avocats et consultants | Prestation sur mesure | Cher et ponctuel. Le dispositif ne se met pas à jour. |
 
@@ -145,7 +145,7 @@ Légende : **[L]** page lue intégralement le 19/11/2026 · **[E]** extrait de m
 | L4 | Novlaw Avocats, « Conformité LCB-FT des agences immobilières » (décisions CNS 2024) — https://novlaw.fr/conformite-lcb-ft-agences-immobilieres/ | L |
 | L5 | GetApp, fiche Konforme (fonctionnalités) — https://www.getapp.com/all-software/a/konforme/ | L |
 | E1 | DGCCRF, enquêtes LCB-FT (résultats 2022, contrôles 2025) — https://www.economie.gouv.fr/dgccrf/laction-de-la-dgccrf/les-enquetes/blanchiment-de-capitaux-et-financement-du-terrorisme-les | E (site bloqué en lecture directe) |
-| E2 | Tarifs concurrents : https://konforme.eu/tarifs · https://vigimmo.com/ · https://conform-immo.fr/ · https://kyc.immo/ · https://www.documan.fr/immobilier | E (détail dans `03-offre-et-prix.md`) |
+| L6 | Tarifs concurrents lus directement le 19/11/2026 : https://konforme.eu/tarifs · https://vigimmo.com/ · https://conform-immo.fr/ · https://kyc.immo/ (Documan https://www.documan.fr/immobilier : extrait de moteur) | L (détail dans `03-offre-et-prix.md`) |
 | E3 | Direction générale du Trésor, ANR 2023 — https://www.tresor.economie.gouv.fr/Articles/2023/02/14/le-colb-a-approuve-l-analyse-nationale-des-risques-anr-de-blanchiment-de-capitaux-et-de-financement-du-terrorisme-en-france | E |
 | E4 | Village de la Justice, décret 2026-310 et champ (tous les assujettis de l'art. L. 561-2) — https://www.village-justice.com/articles/lcb-obligation-formation-des-professionnels-assujettis-epreuve-decret-2026-310,57289.html | E |
 | E5 | AMLR (UE) 2024/1624, application au 10/07/2027 — https://www.springlex.eu/fr/packages/aml/amlr-regulation/article-90/ · https://www.dudkowiak.com/blog/real-estate-agents-under-the-amlr-from-10-july-2027-verification-of-both-buyer-and-seller/ | E |

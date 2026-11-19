@@ -42,16 +42,17 @@ Réservée aux 50 premières agences. En échange : un retour d'expérience de 2
 
 ## 3. Repères concurrents (sourcés)
 
-Prix publics relevés le 19/11/2026. **[E]** = relevé à partir d'extraits du moteur de recherche citant la page de l'éditeur (lecture directe des sites à refaire avant publication, voir RAPPORT). **[L]** = page lue.
+Prix publics relevés le 19/11/2026. **[L]** = page tarifs lue directement, y compris le contenu affiché par JavaScript, le 19/11/2026. **[E]** = relevé à partir d'extraits du moteur de recherche citant la page de l'éditeur (à revérifier avant publication).
 
 | Acteur | Offre | Prix public | Équivalent annuel | Source |
 |---|---|---|---|---|
-| Konforme | Essentiel (indépendants, petites agences) | 49 €/mois, essai 14 jours | 588 €/an | https://konforme.eu/tarifs [E] |
-| Konforme | Professionnel (réseaux, multi-collaborateurs) | 99 €/mois | 1 188 €/an | https://konforme.eu/tarifs [E] |
-| Legapass VigImmo | Essentiel | 49,99 € HT/mois | 600 € HT/an | https://vigimmo.com/ [E] |
-| Legapass VigImmo | Professionnel | 66,67 € HT/mois | 800 € HT/an | https://vigimmo.com/ [E] |
-| Conform-Immo | PRO (tarif de lancement, engagement 12 mois) | 29 € HT/mois (49 € habituellement) | 348 à 588 € HT/an | https://conform-immo.fr/ [E] |
-| kyc.immo | Registre gratuit ; criblage payant | 0 · 49 · 149 € HT/mois | 0 à 1 788 € HT/an | https://kyc.immo/ [E] |
+| Konforme | Essentiel (indépendants, petites agences) : évaluation des risques, procédures pré-rédigées, criblage, KYC | 49 €/mois, essai 14 jours | 588 €/an | https://konforme.eu/tarifs [L] |
+| Konforme | Professionnel (réseaux, multi-collaborateurs, **collaborateurs illimités**) | 99 €/mois | 1 188 €/an | https://konforme.eu/tarifs [L] |
+| Legapass VigImmo | Essentiel (petite structure) | 49,99 € HT/mois (ou 599,99 € HT/an) | 600 € HT/an | https://vigimmo.com/ [L] |
+| Legapass VigImmo | Professionnel (agence de 3 à 6 collaborateurs) | 66,67 € HT/mois (ou 799,99 € HT/an) | 800 € HT/an | https://vigimmo.com/ [L] |
+| Legapass VigImmo | Business (grandes agences) | 99,99 € HT/mois (ou 1 199,99 € HT/an) | 1 200 € HT/an | https://vigimmo.com/ [L] |
+| Conform-Immo | Gratuit (10 dossiers, 1 utilisateur) ; PRO à 29 € HT/mois pour les 30 premiers inscrits (49 € habituellement) | 0 · 29 · 49 € HT/mois | 0 à 588 € HT/an | https://conform-immo.fr/ [L] |
+| kyc.immo | Registre gratuit ; criblage : Solo (3 utilisateurs) ou Agence (20 utilisateurs), ou 30 € HT par opération | 0 · 49 · 149 € HT/mois | 0 à 1 788 € HT/an | https://kyc.immo/ [L] |
 | Documan | Liasse de vigilance, sans abonnement | à partir de 5 € HT par dossier | ~300 € HT pour 60 dossiers | https://www.documan.fr/immobilier [E] |
 | Lefebvre Dalloz | E-learning LCB-FT immobilier, 45 min | 168 € HT par personne | 672 € HT pour 4 personnes | https://formation.lefebvre-dalloz.fr/formations/e-learning-lutte-contre-le-blanchiment-de-capitaux-et-le-financement-du-terrorisme-en-immobilier_701160 [E] |
 | Galian-SMABTP | Formation LCB-FT (catalogue S1 2026) | 49 € par personne | 196 € pour 4 personnes | https://api-minio.galian.fr/galianfr/s3fs-public/2026-01/galian-smabtp-les-formations-du-1er-semestre-2026.pdf [E] |
@@ -62,8 +63,10 @@ Prix publics relevés le 19/11/2026. **[E]** = relevé à partir d'extraits du m
 
 | Composition | Coût annuel |
 |---|---|
-| SaaS d'entrée de gamme (≈ 600 €/an) + e-learning générique pour 4 personnes (196 à 672 €) | **≈ 800 à 1 270 € par an** |
+| SaaS d'entrée de gamme (≈ 600 €/an, Konforme Essentiel ou VigImmo Essentiel) + e-learning générique pour 4 personnes (196 à 672 €) | **≈ 800 à 1 270 € par an** |
 | **Probant, Licence Agence** | **290 € HT par an** |
+
+> **Constat vérifié** : la page tarifs de Konforme ne mentionne aucune formation, et les « collaborateurs illimités » y sont réservés à l'offre à 99 €/mois. La formation adaptée au décret 2026-310 et les collaborateurs illimités dès 290 € HT/an différencient donc réellement Probant.
 
 ## 4. Justification du prix de 290 € HT/an
 
