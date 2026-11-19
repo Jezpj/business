@@ -74,4 +74,16 @@ Ce fichier permet de reprendre le travail exactement là où il s'est arrêté.
 - Régénérer le site : `node site/construire.mjs`, puis `node site/verifier.mjs --brouillon`.
 - Régénérer le pitch : `python3 pitch/generer_pitch.py`, puis `soffice --headless --convert-to pdf --outdir pitch pitch/Probant-pitch.pptx`.
 
-## Phase 4 — Prospection et rapport ⏳ (à faire)
+## Phase 4 — Prospection et rapport ✅ (19/11/2026)
+
+**Livrables**
+- `prospection/prospects.csv` : **10 agences indépendantes réelles** sur 7 marchés exposés (Saint-Tropez, Cannes, Biarritz, Saint-Jean-de-Luz, Annecy, Thonon, Porto-Vecchio, Chamonix). Chacune est vérifiée dans le répertoire officiel (active, employeuse, **non opposée à la prospection**). 8 e-mails génériques publiés, 2 formulaires de contact, avec la source de chaque information.
+- `prospection/brouillons.md` : 10 messages personnalisés, chacun fondé sur un fait vérifié, et une relance unique. **Aucun n'est envoyé.**
+- `prospection/README.md` : méthode chiffrée (209 → 110 → 53 → 14 → 10), exclusions motivées (dont CBRE Axite, réseau), règles CNIL appliquées, procédure d'envoi.
+- `prospection/outils/candidats_api.py` : liste reproductible des candidats depuis l'API officielle, avec exclusion des entreprises opposées.
+- `RAPPORT.md` : décisions, vérifié, estimé ou non vérifié, checklist de validation avant lancement.
+- Prix concurrents **vérifiés directement** (Konforme, VigImmo, Conform-Immo, kyc.immo) et mis à jour dans `docs/03`.
+
+**Environnement** : seconde mise à jour réseau approuvée par l'utilisateur. Elle autorise les sites des agences et les pages tarifs concurrentes, et retire les domaines devenus inutiles.
+
+**État final** : toutes les phases sont terminées. Prochaines actions côté utilisateur : `RAPPORT.md` §5.
