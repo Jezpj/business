@@ -52,8 +52,26 @@ Ce fichier permet de reprendre le travail exactement là où il s'est arrêté.
 - Lancer `cd produit && npm install && npm test && npm run test:e2e`.
 - Mise en service des licences : `npm run licence:init` puis `npm run build`, à faire par le fondateur.
 
-## Phase 2 — Produit (historique)
+## Phase 3 — Pitch et page de vente ✅ (19/11/2026)
 
-## Phase 3 — Pitch et page de vente ⏳ (à faire)
+**Livrables**
+- `site/public/` : **seul dossier à publier**, 1,1 Mo, statique, sans cookie ni traceur. Il contient :
+  - la page de vente (`index.html`), où chaque chiffre est sourcé ;
+  - le diagnostic gratuit (`diagnostic.html`), en 12 questions, qui réutilise le moteur du produit ;
+  - l'application (`app/`) ;
+  - 4 PDF d'exemple ;
+  - **3 projets de textes légaux** (`legal/`), à faire relire ;
+  - les en-têtes de sécurité (`_headers`, avec CSP).
+- `site/DEPLOIEMENT.md` : mise en ligne pas à pas (Cloudflare Pages ou Netlify), Stripe, champs `REMPLACER_…`, tests avant lancement.
+- `site/construire.mjs` régénère le site depuis le produit. `site/verifier.mjs` contrôle les champs à remplacer, les liens et les textes alternatifs, et bloque la mise en ligne tant qu'il reste un champ ou une page légale à l'état de projet.
+- `pitch/Probant-pitch.pptx` (modifiable, avec notes de l'orateur) et `pitch/Probant-pitch.pdf` : 15 diapositives. Elles sont générées par `pitch/generer_pitch.py`, et le graphique respecte le guide de visualisation (palette validée par script).
+
+**Vérifié**
+- Le site a été testé dans Chromium, sur ordinateur et sur mobile (390 px), sous la CSP de production : pas de défilement horizontal, application et aperçus fonctionnels, diagnostic complet, page 404.
+- Ajout du rappel de renouvellement de licence dans l'app (J-30), couvert par un test E2E. La suite passe à 32 tests unitaires et 8 E2E, tous réussis.
+
+**Pour reprendre** :
+- Régénérer le site : `node site/construire.mjs`, puis `node site/verifier.mjs --brouillon`.
+- Régénérer le pitch : `python3 pitch/generer_pitch.py`, puis `soffice --headless --convert-to pdf --outdir pitch pitch/Probant-pitch.pptx`.
 
 ## Phase 4 — Prospection et rapport ⏳ (à faire)

@@ -1,7 +1,8 @@
 // Point d'entrée de l'application Probant.
 /* global __CLE_PUBLIQUE__, __VERSION__ */
 import { charger, sauvegarder, etatInitial, normaliser, lire, ecrire } from './etat.js';
-import { aujourdHui, ajouterMois } from './moteur/dates.js';
+import { aujourdHui, ajouterMois, joursEntre, formatDate } from './moteur/dates.js';
+import { urlAchat } from './vues/parametres.js';
 import { verifierLicence } from './licence.js';
 import { html } from './ui/html.js';
 import { documentComplet } from './documents/gabarit.js';
@@ -110,6 +111,10 @@ function bandeaux() {
   const e = app.etat;
   const out = [];
   if (!app.stockageOk) out.push(html`<div class="bandeau-alerte" role="alert">Le stockage de ce navigateur est indisponible (navigation privée ?) : vos saisies seront perdues à la fermeture. Téléchargez une sauvegarde depuis les Paramètres.</div>`);
+  if (app.licence.valide) {
+    const reste = joursEntre(app.aujourdhui(), app.licence.donnees.exp);
+    if (reste !== null && reste <= 30) out.push(html`<div class="bandeau-info">Votre licence expire le <strong>${formatDate(app.licence.donnees.exp)}</strong> (dans ${reste} jour${reste > 1 ? 's' : ''}). Vos données et documents restent à vous ; renouvelez pour continuer à produire des documents à votre nom. <a href="${urlAchat()}" target="_blank" rel="noopener noreferrer">Renouveler la licence</a></div>`);
+  }
   const aDesDonnees = !e.exemple && (e.agence.raisonSociale || e.vigilances.length || e.equipe.length);
   if (aDesDonnees && (!e.derniereSauvegarde || ajouterMois(e.derniereSauvegarde, 1) <= app.aujourdhui())) {
     out.push(html`<div class="bandeau-info">Vos données ne sont stockées que dans ce navigateur. ${e.derniereSauvegarde ? 'Dernière sauvegarde il y a plus d’un mois.' : 'Aucune sauvegarde téléchargée.'} <button type="button" class="btn btn-lien" data-action="exporterDonnees">Télécharger une sauvegarde</button></div>`);

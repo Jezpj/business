@@ -7,7 +7,12 @@ import { PLANS } from '../licence.js';
 import { exporter, importer, journaliser } from '../etat.js';
 import { telechargerTexte } from '../export.js';
 
-export const URL_ACHAT = 'https://probant.immo/#tarifs';
+/* global __URL_ACHAT__ */
+// Hébergée avec le site (…/app/), l'app pointe vers la page tarifs du site ; sinon vers l'URL fixée au build.
+export function urlAchat() {
+  const defaut = typeof __URL_ACHAT__ !== 'undefined' ? __URL_ACHAT__ : '#';
+  try { return location.protocol.startsWith('http') ? new URL('../#tarifs', location.href).href : defaut; } catch { return defaut; }
+}
 
 export function rendre(app) {
   const e = app.etat;
@@ -26,7 +31,7 @@ ${enTete('Paramètres', 'Licence, sauvegarde de vos données et informations ré
     <textarea id="saisie-licence" rows="3" spellcheck="false" placeholder="PRB1.…" aria-describedby="aide-licence">${app.session.saisieLicence ?? e.licence.cle ?? ''}</textarea>
     <p class="aide" id="aide-licence">La clé est reçue par e-mail après l’achat. Elle est vérifiée sur ce poste, sans connexion.</p>
   </div>
-  <p>${bouton('Activer la licence', 'activerLicence', { variante: 'primaire' })} ${l.valide ? bouton('Retirer la licence de ce poste', 'retirerLicence', { variante: 'lien' }) : html`<a class="btn btn-secondaire" href="${URL_ACHAT}" target="_blank" rel="noopener noreferrer">Acheter une licence — 290 € HT/an</a>`}</p>
+  <p>${bouton('Activer la licence', 'activerLicence', { variante: 'primaire' })} ${l.valide ? bouton('Retirer la licence de ce poste', 'retirerLicence', { variante: 'lien' }) : html`<a class="btn btn-secondaire" href="${urlAchat()}" target="_blank" rel="noopener noreferrer">Acheter une licence — 290 € HT/an</a>`}</p>
 </section>
 <section class="carte" aria-labelledby="t-sauvegarde">
   <h2 id="t-sauvegarde">Vos données</h2>

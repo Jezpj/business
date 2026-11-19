@@ -290,3 +290,17 @@ test('mobile et accessibilité : menu repliable, chaque champ a un libellé', as
   assert.deepEqual(erreurs, []);
   await contexte.close();
 });
+
+test('licence proche de l’échéance : rappel de renouvellement affiché', async () => {
+  const { priv } = JSON.parse(await readFile(path.join(racine, 'tests', '.cle-test.json'), 'utf8'));
+  const bientot = await signerLicence({ v: 1, id: 'LIC-TEST-0003', agence: 'Agence Test', plan: 'agence', emis: '2025-12-09', exp: '2026-12-09' }, priv);
+  const { page, contexte, erreurs } = await ouvrir();
+  await aller(page, 'parametres');
+  await page.fill('#saisie-licence', bientot);
+  await page.click('[data-action="activerLicence"]');
+  await page.waitForTimeout(150);
+  const bandeau = await page.textContent('main');
+  assert.match(bandeau, /Votre licence expire le 09\/12\/2026 \(dans 20 jours\)/);
+  assert.deepEqual(erreurs, []);
+  await contexte.close();
+});

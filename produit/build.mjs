@@ -44,6 +44,7 @@ async function construire({ entree, gabarit, sortie, titre }) {
       __CLE_PUBLIQUE__: JSON.stringify(cle),
       __VERSION__: JSON.stringify(version),
       __DATE_BUILD__: JSON.stringify(new Date().toISOString().slice(0, 10)),
+      __URL_ACHAT__: JSON.stringify(process.env.PROBANT_URL_ACHAT || 'https://REMPLACER_DOMAINE/#tarifs'),
     },
   });
   const js = resultat.outputFiles[0].text.replace(/<\/script/gi, '<\\/script');
