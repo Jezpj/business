@@ -5,3 +5,10 @@ __pycache__/
 .venv/
 .DS_Store
 .claude/settings.local.json
+
+# Probant — secrets et fichiers générés localement
+produit/cle-privee.json
+produit/licences-emises.csv
+produit/tests/.cle-test.json
+produit/tests/sorties/
+produit/dist-test/

@@ -24,7 +24,35 @@ Ce fichier permet de reprendre le travail exactement là où il s'est arrêté.
 
 ---
 
-## Phase 2 — Produit ⏳ (à faire)
+## Phase 2 — Produit ✅ (19/11/2026)
+
+**Livrable** : `produit/dist/probant.html`. C'est une application autonome en un seul fichier de 229 Ko, qui fonctionne hors ligne et dont les données restent dans le navigateur.
+
+**Fonctions**
+- Classification des risques : 22 facteurs sur les 5 axes, ajustements motivés, versions.
+- Procédures internes : 13 sections et 2 annexes.
+- Désignation Tracfin et marche à suivre ERMES.
+- Formation adaptée par fonction et par risque : 21 modules, 32 questions, attestation numérotée, registre avec fin de conservation à départ + 5 ans.
+- Fiches de vigilance : niveau standard, renforcé ou bloqué, manquants, clôture contrôlée, conservation à clôture + 5 ans.
+- Auto-contrôle sur 20 points, avec pré-remplissage.
+- 10 documents PDF et Word.
+- Licence ECDSA vérifiée hors ligne, mode démo avec filigrane.
+- Sauvegarde et restauration, journal de traçabilité, agence d'exemple fictive.
+
+**Tests** : 32 tests unitaires et 7 tests E2E dans Chromium, tous réussis. Ils couvrent le parcours complet jusqu'à 100 %, la licence (valide, falsifiée, expirée), les 14 documents en PDF, la sauvegarde et la restauration, le blocage sur gel des avoirs, l'injection de code, l'affichage mobile et les libellés de tous les champs.
+
+**Automatisation des ventes** :
+- `produit/outils/licence.mjs` : clés, émission et vérification. Testé de bout en bout dans une copie jetable, sans qu'aucune clé ne reste dans le dépôt.
+- `produit/outils/worker-licence/` : chaîne Stripe → licence → e-mail Brevo, testée avec des échanges simulés.
+
+**Exemples** : `produit/exemples/` contient 10 PDF et 5 captures, produits à partir d'une agence fictive.
+
+**Pour reprendre** :
+- Ouvrir `produit/dist/probant.html`.
+- Lancer `cd produit && npm install && npm test && npm run test:e2e`.
+- Mise en service des licences : `npm run licence:init` puis `npm run build`, à faire par le fondateur.
+
+## Phase 2 — Produit (historique)
 
 ## Phase 3 — Pitch et page de vente ⏳ (à faire)
 

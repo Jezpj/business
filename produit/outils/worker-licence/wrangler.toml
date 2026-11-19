@@ -1,0 +1,16 @@
+# Configuration Cloudflare Workers — émission automatique des licences.
+# Déploiement : voir produit/README.md (section « Automatiser l'émission des licences »).
+name = "probant-licences"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+EXPEDITEUR_EMAIL = "licences@VOTRE-DOMAINE.fr"   # à remplacer : adresse vérifiée chez Brevo
+EXPEDITEUR_NOM = "Probant"
+URL_APPLICATION = "https://VOTRE-DOMAINE.fr/app/" # à remplacer
+
+# Secrets à créer (jamais dans ce fichier) :
+#   npx wrangler secret put LICENCE_CLE_PRIVEE     (contenu de cle-privee.json)
+#   npx wrangler secret put STRIPE_WEBHOOK_SECRET  (whsec_…)
+#   npx wrangler secret put STRIPE_SECRET_KEY      (sk_live_… — clé restreinte en lecture « Checkout Sessions » conseillée)
+#   npx wrangler secret put BREVO_API_KEY
